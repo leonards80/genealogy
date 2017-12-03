@@ -10,5 +10,6 @@ class Person(models.Model):
     updated = models.DateTimeField(auto_now=True, auto_now_add=False)
     timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
 
-def __str__(self):
-    return self.first_name + self.last_name
+    def __str__(self):
+        full_name = self.first_name + ' ' + self.last_name
+        return full_name
