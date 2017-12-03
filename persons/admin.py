@@ -4,4 +4,10 @@ from django.contrib import admin
 
 from .models import Person
 
-admin.site.register(Person)
+class PersonModelAdmin(admin.ModelAdmin):
+    list_display = ["__str__", "updated", "timestamp"]
+    list_filter = ["updated", "timestamp"]
+    class Meta:
+        model = Person
+
+admin.site.register(Person, PersonModelAdmin)

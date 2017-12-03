@@ -4,9 +4,21 @@ from django.db import models
 
 class Person(models.Model):
     first_name = models.CharField(max_length=120)
+    first_names = models.CharField(max_length=120, blank=True, null=True)
     last_name = models.CharField(max_length=120)
-    birth_date = models.DateField()
     gender = models.CharField(max_length=1, choices=(('M', 'Male'), ('F', 'Female')))
+    birth_date = models.DateField(blank=True, null=True)
+    birth_place = models.CharField(max_length=120, blank=True, null=True)
+    birth_source_doc = models.CharField(max_length=120, blank=True, null=True)
+    birth_certificate = models.TextField(blank=True, null=True)
+    death_date = models.DateField(blank=True, null=True)
+    death_place = models.CharField(max_length=120, blank=True, null=True)
+    death_source_doc = models.CharField(max_length=120, blank=True, null=True)
+    death_certificate = models.TextField(blank=True, null=True)
+    wedding_date = models.DateField(blank=True, null=True)
+    wedding_place = models.CharField(max_length=120, blank=True, null=True)
+    wedding_source_doc = models.CharField(max_length=120, blank=True, null=True)
+    wedding_certificae = models.CharField(max_length=120, blank=True, null=True)
     updated = models.DateTimeField(auto_now=True, auto_now_add=False)
     timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
 
